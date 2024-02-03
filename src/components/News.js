@@ -43,50 +43,13 @@ const News = (props) => {
   }
 
   useEffect(() => {
+    document.title = `${capitalizeFirstLetter(props.category)} - NewsChurner`
     updatePage()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // const [page, setPage] = useState(1)
 
-  const handlePrevClick = async () => {
-    // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2c1408a05f5b4b30887cf348a937ad7f&page=${this.state.page - 1}&pageSize=${props.pageSize}`;
-    // this.setState({ loading: true })
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    // console.log(parsedData);
-    // this.setState({
-    //   articles: parsedData.articles,
-    //   page: this.state.page - 1,
-    //   loading: false
-    // })
-
-    setPage(page - 1)
-    // Call updateNews() after the state has been updated
-    updatePage();
-  }
-
-
-  const handleNextClick = async () => {
-    // console.log(this.state.page);
-    // if (this.state.page + 1 > Math.ceil(this.state.totalResults / props.pageSize)) {
-    // }
-    // else {
-    //   let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2c1408a05f5b4b30887cf348a937ad7f&page=${this.state.page + 1}&pageSize=${props.pageSize}`;
-    //   this.setState({ loading: true })
-    //   let data = await fetch(url);
-    //   let parsedData = await data.json();
-    //   console.log(parsedData);
-    //   this.setState({
-    //     articles: parsedData.articles,
-    //     page: this.state.page + 1,
-    //     loading: false
-    //   })
-    // }
-
-    setPage(page + 1)
-    // Call updateNews() after the state has been updated
-    updatePage();
-  }
 
   return (
     <>
